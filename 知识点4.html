@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS选择器:帅选</title>
+	<script src="../assets/jquery-1.12.0.js"></script>
+	<script>
+	$(function(){
+		/*
+		基本筛选：
+            1. :first/:last,:eq(n)	筛选第一/最后一个元素,第n个
+			2. :odd/:even,:gt(n)/:lt(n)	筛选范围（索引支持负数）
+			3. :contains(奥巴马)	筛选出包含“奥巴马”这三个字的元素
+			4. :not(selector)	去除所有与给定选择器匹配的元素
+			5. :has(selector)	匹配含有选择器所匹配的元素的元素
+
+
+			过滤方法:
+				first()/last(): 获取集合中第一个/最后一个元素
+				eq(index|-index): 获取第N个元素,n支持负数（表示从后面查找）
+				filter(expr|obj|ele|fn): 筛选出与指定表达式匹配的元素集合。这个方法用于缩小匹配的范围。用逗号分隔多个表达式
+				map(callback): 将一组元素转换成其他数组（不论是否是元素数组）
+				slice(start,[end]): 选取一个匹配的子集
+
+				has(expr|ele): 保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+				not(expr|ele|fn): 删除与指定表达式匹配的元素
+
+			查找：
+				find(e|o|e): 查找后代元素
+				children([expr]): 取得匹配元素的所有子元素。(原生js:children)
+
+				parent([expr]): 获取父元素
+				parents([expr]): 取得所有父级元素
+				closest(e|o|e): 从元素本身开始，逐级向上级元素匹配，并返回最先匹配的元素
+				offsetParent(): 返回第一个有定位属性(absolute,relative,fixed)的父元素,如果没有定位父级，则返回html元素
+
+				next([expr]): 返回下一个同辈元素 ==> nextElementSibling
+				prev([expr]): 获取前一个同辈元素 ==> previousElementSibling
+				nextAll([expr]): 获取当前元素之后所有的同辈元素 
+				prevAll([expr]) 获取当前元素之前所有的同辈元素
+				siblings([expr]) 获取当前元素的所有兄弟元素（除自身以外的所有兄弟元素 = prevAll + nextAll）
+			
+			其他：
+			1. each(function(idx,ele){}) //用于循环jquery对象
+            	return true;// 跳过当前循环，进入下一个循环 ==> continue
+            	return false// 退出整个each循环 ==> break;
+            2. text()   //获取文本(结果是由所有元素的文本内容的组合)	
+
+            3.事件方法
+				1)click(fn)：点击事件触发时执行fn
+
+			4.index()
+				如果不传递参数，那么返回的是当前元素相对于其同辈元素的位置。
+
+			5.	prop(attr[,boolean]): 获取/设置(布尔类型)属性
+					checked,selcted,focus,disabled,readonly
+				attr(attr[,val]): 设置/获取元素的属性值（用于一般属性）
+
+			6.	show()：显示元素
+				hide()：隐藏元素
+					带参数：同时改变width,height,opacity的动画
+				slideUp()/slideDown():改变元素高度的动画
+
+			7.判断一个jquery对象是否存在
+				1)length
+				2)转成原生对象再判断
+         */		
+	});
+	</script>
+</head>
+<body>
+	<div class="container content">
+		<div class="content" style="position:relative;">
+			<div class="content">
+				<span>
+					<a href="#" id="link">#link</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li class="active">3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<input type="checkbox" >
+</body>
+</html>

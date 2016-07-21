@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<script>
+		/*
+			1.jQuery的ajax方法
+				$.ajax(settings)
+					type:请求类型，默认GET
+					url:数据请求地址（API地址）
+					data:发送到服务器的数据对象，格式：{Key:value}。
+					success:请求成功时回调函数。
+					dataType:设定返回数据的格式，json, jsonp, text(默认), html, xml, script
+					async：是否为异步请求，默认true
+				
+				$.get(url,[data],[fn],[type]) 
+
+				$.post(url,[data],[fn],[type])
+
+				$.getJSON(url,[data],[fn])
+				 
+				$.getScript(url,[callback])
+				 
+				load(url,[data],[callback]) 载入远程 HTML 文件代码并插入页面中。
+
+				[案例]加载html文件
+				
+				[案例]滚动加载（懒加载）
+
+				jsonp:
+					天气请求地址：http://wthrcdn.etouch.cn/weather_mini?city=广州'
+
+				PS: jsonp严格来说不是一个ajax请求，它是利用script标签来实现的数据获取
+
+			2.ajax全局事件与全局设置
+				ajaxError(callback)		//AJAX 请求发生错误时执行函数
+				ajaxStart(callback) 	//AJAX 请求开始时执行函数
+				ajaxSuccess(callback) 	//AJAX 请求成功时执行函数
+				**1.9版本后只能写在$(document)对象上触发
+
+				$.ajaxSetup([options])
+				设置全局 AJAX 默认选项，options为$.ajax方法中的参数。
+			
+			3.常用处理函数
+				$.each(object,[callback]) 
+				$.makeArray(obj) //将类数组对象转换为数组对象。
+				$.parseJSON(json) //接受一个JSON字符串，返回解析后的对象。类似原生js中的JSON.parse
+				$.inArray(value,array,[fromIndex]) //确定value在数组array中的位置，从0开始计数(如果没有找到则返回 -1 )，一般用于判断数组中是否包含某一字符。
+				serialize() / serializeArray() : 只能在form表单中使用，并且表单元素必须有name属性
+
+				测试操作
+					$.type(obj)    检测obj的数据类型, 同Object.prototype.toString.call(data).slice(8,-1)
+					$.isArray(obj) 测试对象是否为数组 return $.type(obj) === 'array'
+				字符串操作
+					$.trim(str)  去除首尾空格
+
+				补充：
+					**data([key],[value]|o) /removeData([name|list]) 在元素上存放(删除)数据
+
+					JSON.parse():把json字符串转换成json对象(对象，数组)
+						这个方法对json字符串要求非常高
+							1）属性名/字符串必须用双引号
+							2）不能有注释
+				
+
+				API地址：
+					1）/ajax/ajaxtest
+						返回一个字符串
+					2）/ajax/getCity
+						获取城市列表，返回json字符串（数组）
+					3）/ajax/checkname
+						验证用户名是否被注册,返回"true"(未注册)/"false"(已注册)
+						参数：regname
+						已经注册的名字：['张三','李四','王尼玛','奥巴马']
+					4）/ajax/weibo
+						微博信息，返回
+					5）/ajax/football
+						足球解说信息，返回
+				
+				
+				同域：数据请求地址和访问地址同域
+				协议、域名、端口同域
+				
+				scrollIntoView把当前元素滚动到可视区域,原生方法
+				$chatWindow.find(".xxx")[0].scrollIntoView();
+		 */
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

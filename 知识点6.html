@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件</title>
+	<script>
+		/*
+			1.原生js事件绑定
+				1)<div onclick="fn()"></div>	(淘汰)
+				2)onclick = function(){};
+					多个相同事件绑定会覆盖
+				3)addEventListener(type,fn,catch);//attachEvent(type,fn)
+					多个相同事件绑定不会覆盖
+					按照绑定顺序执行
+					removeEventListener(type,fn);
+
+			2.常用事件方法
+
+				鼠标事件
+				click([[data],fn])  //点击时触发 click = mousedown + mouseup
+				dblclick([[data],fn]) //双击事件 dblclick = 2*click
+				mousedown([[data],fn])
+				mouseup([[data],fn])
+				mousemove([[data],fn])
+				mouseout([[data],fn])
+				mouseover([[data],fn])
+				mouseenter([[data],fn]) //事件不会冒泡
+				mouseleave([[data],fn]) ) //事件不会冒泡
+
+				键盘事件
+				keydown([[data],fn]) //键盘按下时触发
+				keypress([[data],fn])
+				keyup([[data],fn]) //键盘弹起时触发
+
+				表单事件
+				blur([[data],fn])  //失去焦点时触发
+				focus([[data],fn])  //获得焦点
+				change([[data],fn]) //值改变并失去焦点时触发
+				submit([[data],fn])
+
+				其他事件
+				resize([[data],fn]) //元素大小改变时触发
+				scroll([[data],fn]) //滚动时触发
+
+				事件名称
+				input: 输入的时候触发
+
+
+			3.jquery事件绑定与移除
+				on(type,[selector],fn)
+					1> selector: 把本来绑定给selector的事件委托给它的父级
+					2> 事件命名空间, 自定义事件（对事件加以细分）
+						格式：事件类型.自定名字
+					3> 一次性绑定多个事件，事件之间以空格隔开
+
+				off: 清除绑定事件
+					1>off('click');//清除当前元素的点击事件
+					2>off();//清除当前元素所有事件
+					3>off('click mouseover') 一次性清除多个事件，事件之间以空格隔开
+					4>off('click.output') 清除命名空间事件
+
+			4.事件处理
+				hover(over[,out])
+					over:鼠标移入时执行
+					out:鼠标移出时执行
+					mouseenter + mouseleave
+					
+				trigger(type): 手动触发事件（即使事件没有发生，也能执行事件处理函数）
+				triggerHandler(type): 这个方法会触发指定的事件类型上所有绑定的处理函数。但不会执行浏览器默认行为，也不会产生事件冒泡
+
+				阻止浏览器默认行为
+				event.preventDefault();
+
+				阻止冒泡
+				event.stopPropagation();
+
+				两者一起阻止：
+				return false; 
+
+
+		 */
+		// window.onload = function(){
+		// 	alert(1)
+		// }
+		// window.onload = function(){
+		// 	alert(2)
+		// }
+		
+		// window.addEventListener('load',function(){
+		// 	alert(1)
+		// });
+		// window.addEventListener('load',function(){
+		// 	alert(2)
+		// });
+
+		// IE6-8按照绑定逆序执行，ie9-10按绑定顺序执行，ie11+不支持
+		// window.attachEvent('onload',function(){
+		// 	alert(1)
+		// });
+		// window.attachEvent('onload',function(){
+		// 	alert(2)
+		// });
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

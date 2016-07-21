@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<script>
+		/*
+			1.基本动画效果
+				1）显示隐藏
+				show/hide
+				原理：
+				hide()通过改变元素的高度、宽度、和不透明度，直到这三个属性值到0
+				show()通过改变元素的高度、宽度、和不透明度，直至内容完全可见
+
+				2)滑动（通过改变高度）
+				slideDown：
+					1)显示元素
+					2)不断改变高度，直到样式内设定的值
+				slideUp：
+					1)不断改变高度，直到0
+					2)隐藏元素
+				slideToggle([speed,callback])
+
+				3)淡入淡出（通过改变不透明度）
+				fadeIn:
+					1)显示元素
+					2)不断改变透明度直到1
+				fadeOut:
+					1)不断改变透明度直到0
+					2)隐藏元素
+				fadeToggle([speed,callback])
+
+				fadeTo([[speed],opacity,[fn]])	不断改变透明度opacity，直到设定的值，并在动画完成后可选地触发一个回调函数。
+
+				PS：三种预设速度slow,normal,fast（600，400，200）
+
+			2.自定义动画
+				animate (params,[sp                                                                             eed],[easing],[fn])
+				[案例]自动轮播图效果
+
+				判断元素是否处于动画状态，一般与is()方法配合使用
+				:animated
+
+			3.动画队列
+				1）一个元素上的动画：
+					当animate中存在多个属性时，动画同时发生
+					当同一个元素链式调用animate时，动画是按顺序发生(队列)
+
+				2）多个元素上的动画：
+					默认情况下，动画同时发生
+					回调函数内的动画等到当前动画执行完后才接着执行
+
+				3)stop([clearQueue],[jumpToEnd])
+					不加参数：停止当前元素所有正在运行的动画。
+					clearQueue:值为true时，清除队列
+					jumpToEnd:值为true时，跳到当前动画的最后一帧
+					[案例]手风琴效果
+
+				4)delay
+					设置一个延时来推迟执行队列中之后的动画。
+					delay(duration,[queueName])
+						duration:延迟的时间
+						
+				setTimeOut/setInterval代替方案:
+				var timer=requestAnimationFrame() //请求帧动画
+				cancelAnimationFrame(timer);
+
+		 */
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

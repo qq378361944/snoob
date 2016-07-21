@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知识点</title>
+    <script>
+        /* 
+            1.创建jquery对象
+                $('<div/>')
+                $('<div>生成一个div</div>')
+
+            2.元素添加
+                1)内部添加（添加为子元素）
+                append(content|obj|ele|fn): 在元素内最后面追加内容（后置）==> appendTo
+                prepend: 向元素内部增加内容（前置）==> prependTo
+
+                2)外部插入内容（添加为兄弟元素）
+                after: 在元素后面插入内容 ==> insertAfter
+                before: 在元素前面插入内容 ==> insetBefore
+
+                **如果页面上已经存在了要添加的元素，append,prepend,after,before会把元素移动到页面相应的位置
+
+            3.元素删除 
+                remove();   删除元素, 虽然元素从文档中删除了，但js内部依然保留对它引用
+                empty();    清空内容
+
+            4.元素复制
+                clone([Even[,deepEven]])
+                Even：（true 或 false）是否复制元素的行为，默认为false
+                deepEven: （true 或 false）是否复制子元素的行为，默认为Even的值
+
+            5.元素替换：
+                replaceWith(content|fn)：将指定元素替换成匹配元素
+                replaceAll(selector)：用匹配的元素替换掉所有 selector匹配到的元素。
+
+        其他：
+            1.通用遍历方法，用于遍历对象和数组。
+                $.each(arr|obj,callback): callback(idx,item)
+            2.根据现有数组生成一个新的数组，新数组的元素为callback内return的值
+                $.map(arr|obj,callback): callback(item,idx)
+            3.检测参数n的数据类型
+                $.type(n)
+
+            4.测试运行时间
+            	console.time(name):测试开始的时间
+            	console.timeEnd(name)：测试结束的时间
+            	当两个name的值一样时，在timeEnd后会输出两者之间代码运行的时间
+
+            	document.createDocumentFragment():创建一个临时的容器
+
+            5.自定动画animate(params[,speed][,easing][,fn]))
+            $('div').animate({},function(){})
+
+            6.offset():获取匹配元素相对于根元素的偏移量，返回一个对象，包含当前元素的top,left值
+            position():获取匹配元素相对(有定位属性)父元素的偏移量，如果没有定位父级，则相对于根元素(html)，返回一个对象，包含当前元素的top,left值。
+
+            7.盒模型属性
+                width() = width;    //取值/赋值
+                innerWidth() = width + padding; <==> clientWidth
+                outerWidth() = width + padding + border; <==> offsetWidth
+                outerWidth(true) = width + padding + border + margin;
+				
+			获取窗口宽度$(window).width()
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
