@@ -1,0 +1,59 @@
+CSS预处理工具：less, sass
+
+语法：
+	1、注释
+		//单行
+		/*多行*/
+
+	2、变量
+		1）命名规则：以$符号开头后面是字母和数字
+		2）默认变量：sass的默认变量仅需要在值后面加上!default即可
+			$fontSize: 16px !default;
+			被同名变量覆盖
+		3）特殊变量
+			#{$fontSize}
+
+	3、嵌套
+		&：表示父元素选择器
+
+	4、继承
+		使用选择器的继承，要使用关键词@extend
+	    1）继承一般样式
+	        @extend h1
+	    2）占位选择器%
+	    	样式不会编译到css文件中
+
+	5、混合(mixin)
+		类似js里的函数
+
+	6、条件判断及循环
+    1）@if判断
+        @if可一个条件单独使用，也可以和@else结合多条件使用
+        @if $type == ocean {
+            color: blue;
+        } @else if $type == matador {
+            color: red;
+        } @else {
+            color: black;
+        }
+
+    2）三目判断
+        语法为：if($condition, $if_true, $if_false) 。三个参数分别表示：条件，条件为真的值，条件为假的值
+        if(true, 1px, 2px) => 1px
+
+    3）for循环
+        @for $var from <start> through <end>（包含end值）
+        @for $var from <start> to <end>（不包含en值）
+
+7、@import 'url'
+    引入其他sass文件，编译时会复制一份当当前位置
+
+
+
+Sass编译与反编译
+	1）sass => css
+		配合gulp自动化构建工具，使用gulp-sass插件
+
+	2）css ==> sass(.scss)
+		首先把css文件转换成sass源码：*.css ==> *.scss
+		在线转换：http://css2sass.herokuapp.com/

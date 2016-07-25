@@ -1,0 +1,26 @@
+创建仓库：git init
+
+1）
+2）把文件添加到暂存区（stage area/index）
+	git add <file>
+	文件颜色从红色变成绿色
+3）把暂存区的文件提交到版本库
+	git commit -m "备注信息"
+
+git status：查看当前仓库状态
+git文件三个状态：
+	untracked:未被跟踪的（文件从未添加到版本库）
+	unstaged：未被暂存的（有修改但未添加到暂存区）
+	uncommited：未被提交的（添加到暂存区但未提交到版本库的状态）
+
+HEAD：表示当前版本的指针
+
+git log：显示提交日志
+
+版本回退
+	git reset HEAD
+	参数：(--hard、--mixed(默认值)、--soft)
+		--hard:工作区、暂存区、版本库的文件同时回退
+		--mixed：暂存区、版本库的文件回退
+		--soft：仅仅回退版本库中的文件
+	
